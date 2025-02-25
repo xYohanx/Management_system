@@ -75,4 +75,15 @@ public class CustomerServiceImpl implements CustomerService {
 
         return customerList;
     }
+
+    @Override
+    public List<Customer> searchBySalary(Double salary) {
+       List<CustomerEntity> bySalary =customerRepository.findBySalary(salary);
+       List<Customer> list=new ArrayList<>();
+
+       bySalary.forEach(customerEntity ->
+               list.add(mapper.map(customerEntity, Customer.class))
+               );
+       return list;
+    }
 }

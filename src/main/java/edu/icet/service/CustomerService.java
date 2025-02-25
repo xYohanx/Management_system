@@ -19,5 +19,9 @@ public interface CustomerService {
     List<Customer> searchByName(String name);
 
     List<Customer> searchByAddress(String address);
+
+    List<Customer> searchBySalary(Double salary);
 }
+
+
 
